@@ -54,7 +54,7 @@ function App() {
           </Route>
           <Route >
             <div>
-              NOt found
+              NOt found 2.0
             </div>
           </Route>
         </Switch>
