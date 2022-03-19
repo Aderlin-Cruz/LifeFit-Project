@@ -16,6 +16,8 @@ import TicketsLF from "./TicketsLF";
 import UsuariosLF from "./UsuariosLF";
 import VentasLF from "./VentasLF";
 
+import Pokemones from "./Pokemones"
+
 const estilos = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -51,7 +53,7 @@ const Contenedor = () => {
               <CajonVacioLF/>
             </Route>
             <Route exact path={`${path}/administracion`}>
-              <AdministracionLF/>
+              <Pokemones/>
             </Route>
             <Route exact path={`${path}/tickets`}>
               <TicketsLF/>
