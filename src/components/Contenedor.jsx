@@ -13,10 +13,10 @@ import CajonVacioLF from "./CajonVacioLF";
 import EmpleadosLF from "./EmpleadosLF";
 import ProductosLF from "./ProductosLF";
 import TicketsLF from "./TicketsLF";
-import UsuariosLF from "./UsuariosLF";
 import VentasLF from "./VentasLF";
 
 import Pokemones from "./Pokemones"
+import UsuariosLF from "./usuarios/UsuariosLF";
 
 const estilos = makeStyles((theme) => ({
   root: {
@@ -65,7 +65,7 @@ const Contenedor = () => {
               <VentasLF/>
             </Route>
             <Route exact path={`${path}/usuarios`}>
-              <UsuariosLF/>
+             <UsuariosLF/>
             </Route>
             <Route exact path={`${path}/empleados`}>
               <EmpleadosLF/>
