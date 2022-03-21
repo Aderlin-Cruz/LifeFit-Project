@@ -21,7 +21,7 @@ const UsuariosLF = React.memo(() => {
           lastName: "",
           cellPhone: "",
           date: "",
-          status: false,
+          status: false
         }}
         validate={(formValues) => {
           let errors = {};
