@@ -13,7 +13,7 @@ import CajonVacioLF from "./CajonVacioLF";
 import EmpleadosLF from "./EmpleadosLF";
 import ProductosLF from "./ProductosLF";
 import TicketsLF from "./TicketsLF";
-import UsuariosLF from "./UsuariosLF";
+import UsuariosLF from "./usuarios/UsuariosLF";
 import VentasLF from "./VentasLF";
 
 import Pokemones from "./Pokemones"
