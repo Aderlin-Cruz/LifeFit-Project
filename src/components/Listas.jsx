@@ -118,7 +118,7 @@ const Listas = () => {
             <ListItemIcon>
               <AddCircleOutlineIcon />
             </ListItemIcon>
-            <ListItemText primary="Nuevo Usuario" />
+            <Link to={`${url}/usuarios`} style={{ textDecoration: 'none' }}><ListItemText primary="Nuevo Usuario" /></Link> 
           </ListItemButton>
           <ListItemButton sx={{ pl: 4 }}>
             <ListItemIcon>
