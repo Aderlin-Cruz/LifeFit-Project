@@ -1,4 +1,4 @@
-import { Grid } from "@material-ui/core";
+import { Grid, Select } from "@material-ui/core";
 
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import React, { useState } from "react";
@@ -20,8 +20,8 @@ const UsuariosLF = React.memo(() => {
           name: "",
           lastName: "",
           cellPhone: "",
-          date: "",
-          status: false
+          memberShip: "",
+          file: ''
         }}
         validate={(formValues) => {
           let errors = {};
@@ -41,11 +41,8 @@ const UsuariosLF = React.memo(() => {
           } else if (!/^([0-9])*$/.test(formValues.cellPhone)) {
             errors.cellPhone = "Solo puedes ingresar numeros";
           }
-          if (!formValues.date) {
-            errors.date = "Por favor selecciona una fecha de vencimiento";
-          }
-          if (!formValues.status) {
-            errors.status = "Por favor selecciona la casilla";
+          if (!formValues.memberShip) {
+            errors.memberShip = "Por favor Selecciona una opcion";
           }
           return errors;
         }}
@@ -115,49 +112,34 @@ const UsuariosLF = React.memo(() => {
                   />
                 </Grid>
                 <Grid item xs={12}>
-                  <label htmlFor="date" className={styles.labelInput}>
-                    Fecha de Vencimiento
+                  <label htmlFor="memberShip" className={styles.labelInput}>
+                    Membresia
                   </label>
                   <Field
-                    type="date"
-                    id="date"
-                    name="date"
+                    name="memberShip"
+                    as="select"
                     className={styles.formInput}
-                  />
+                  > 
+                    <option value="visit"> Visita</option>
+                    <option value="7">Semanal</option>
+                    <option value="30"> Mensual</option>
+                    <option value="365"> Anual</option>
+                  </Field>
                   <ErrorMessage
-                    name="date"
+                    name="memberShip"
                     component={() => (
-                      <div className={styles.error}>{errors.date}</div>
+                      <div className={styles.error}>{errors.memberShip}</div>
                     )}
                   />
                 </Grid>
               </Grid>
 
               <Grid item xs={5}>
-                <Grid item xs={12} style={{ height: "70%" }}>
+                <Grid item xs={12} style={{ height: "100%" }}>
                   <label htmlFor="image" className={styles.addUser}>
                     Agrega una imagen de perfil
                   </label>
-                </Grid>
-                <Grid item xs={12} style={{ height: "30%" }}>
-                  <label htmlFor="status" className={styles.addUser}>
-                    Estatus del Usuario
-                  </label>
-                  <div
-                    style={{
-                      width: "100%",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
-                  >
-                    <Field type="checkbox" id="status" name="status" />
-                  </div>
-                  <ErrorMessage
-                    name="status"
-                    component={() => (
-                      <div className={styles.errorStatus}>{errors.status}</div>
-                    )}
-                  />
+               
                 </Grid>
               </Grid>
               <Grid item xs={12}>
